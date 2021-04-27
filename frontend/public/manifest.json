@@ -1,0 +1,8 @@
+{
+  "short_name": "Filtering Products",
+  "name": "Products Filtering On The Backend React app",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
