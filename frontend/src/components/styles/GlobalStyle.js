@@ -1,6 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --primaryClr: #3bcecc;
+    --secondaryClr: #7284A8;
+    --textClr: #474954;
+    --textAltClr: #eaeaea;
+  }
+
   *,
   *::before,
   *::after {
@@ -12,10 +19,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-  }
-
-  * + * {
-    margin-top: 1em;
+    color: var(--textClr);
   }
 
   .container {
@@ -32,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     cursor: pointer;
+    color: inherit;
   }
 `;
 
