@@ -8,17 +8,22 @@ import { Link } from 'react-router-dom';
 const StyledNavigation = styled.ul`
   overflow: none;
   position: fixed;
-  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  transform: ${({ open }) =>
+    open ? 'translate(0, 0)' : 'translate(-100%, -100%)'};
   background-color: var(--secondaryClr);
   display: ${({ open }) => (open ? 'flex' : 'none')};
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 5s ease-in-out;
+  transition: translate 0.3s ease-in-out;
+
+  .active {
+    color: var(--secondaryClr);
+  }
 
   li {
     color: var(--textAltClr);
@@ -42,6 +47,7 @@ const StyledNavigation = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    transform: none;
 
     li {
       padding: 0;
@@ -49,14 +55,14 @@ const StyledNavigation = styled.ul`
   }
 `;
 
-const NavItems = ({ links, open }) => {
+const NavItems = ({ links, open, active }) => {
   return (
-    <StyledNavigation open={open}>
+    <StyledNavigation className={active} open={open}>
       {links &&
         links.map((link) => {
           return (
             <li key={link}>
-              <Link to={`/${link}`}>{link}</Link>
+              <Link to={link === 'Home' ? '/' : `/${link}`}>{link}</Link>
             </li>
           );
         })}

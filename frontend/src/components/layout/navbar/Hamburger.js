@@ -19,7 +19,7 @@ const StyledHamburger = styled.div`
     height: 0.25rem;
     background-color: var(--textClr);
     border-radius: 1000px;
-    transform-origin: 4px;
+    transform-origin: 1px;
     transition: all 0.3s ease;
   }
 
@@ -28,7 +28,8 @@ const StyledHamburger = styled.div`
   }
 
   .middleLine {
-    display: ${({ open }) => (open ? 'none' : 'block')};
+    transform: ${({ open }) => (open ? 'translateX(1em)' : 'translateX(0)')};
+    opacity: ${({ open }) => (open ? '0' : '1')};
   }
 
   .bottomLine {
@@ -42,6 +43,7 @@ const StyledHamburger = styled.div`
 
 function Hamburger() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState('active');
 
   return (
     <>
@@ -51,9 +53,13 @@ function Hamburger() {
         <div className="line bottomLine" />
       </StyledHamburger>
       <NavItems
-        links={['About', 'Products', 'Services']}
+        links={['Home', 'About', 'Products']}
         open={open}
-        onClick={() => setOpen(!open)}
+        active={active}
+        onClick={() => {
+          setOpen(!open);
+          setActive(active === '' ? 'active' : '');
+        }}
       />
     </>
   );

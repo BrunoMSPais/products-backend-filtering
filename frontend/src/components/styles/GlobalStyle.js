@@ -28,6 +28,25 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 1rem;
   }
 
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid {
+    @media (min-width: 780px) {
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    gap: 8px;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+  }
+
   ul,
   ol {
     list-style: none;
