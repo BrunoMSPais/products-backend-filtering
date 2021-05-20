@@ -1,11 +1,13 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --primaryClr: #3bcecc;
+    --primaryClr: #4b59f7;
     --secondaryClr: #7284A8;
-    --textClr: #474954;
+    --textClr: #fff;
     --textAltClr: #eaeaea;
+
+    --darkBg: #101522;
   }
 
   *,
@@ -16,35 +18,16 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  html,
   body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: var(--textClr);
-  }
+    min-height: 100vh;
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .grid {
-    @media (min-width: 780px) {
-    display: grid;
-    grid-template-columns: repeat(3 1fr);
-    gap: 8px;
+    @media screen and (max-width: 960px) {
+      overflow-x: hidden;
     }
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-size: 1.5rem;
-    line-height: 1.6rem;
   }
 
   ul,
@@ -56,6 +39,18 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
     color: inherit;
+  }
+`;
+
+export const Container = styled.div`
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 0.5em;
+
+  @media screen and (min-width: 991px) {
+    padding: 0 3em;
   }
 `;
 

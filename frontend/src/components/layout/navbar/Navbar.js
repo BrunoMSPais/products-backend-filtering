@@ -1,27 +1,44 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-import styled from 'styled-components';
-import React from 'react';
-import NavLogo from './NavLogo';
-import Hamburger from './Hamburger';
+import React, { useState } from 'react';
+import { BiMenuAltRight, BiXCircle } from 'react-icons/bi';
+import {
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  NavIcon,
+  Hamburger,
+  NavMenu,
+  NavItem,
+  NavLinks,
+} from './Navbar.elements';
 
-const StyledNavbar = styled.nav`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--secondaryClr);
-  position: sticky;
-  z-index: 10;
-`;
+const Navbar = () => {
+  const [click, setClick] = useState(false);
 
-function Navbar() {
+  const handleClick = () => setClick(!click);
+
   return (
-    <StyledNavbar className="container">
-      <NavLogo logoText="products.js" />
-      <Hamburger />
-    </StyledNavbar>
+    <>
+      <Nav>
+        <NavbarContainer>
+          <NavLogo to="/">
+            <NavIcon />
+            MarketJS
+          </NavLogo>
+          <NavMenu onClick={handleClick} click={click}>
+            <NavItem>
+              <NavLinks to="/">Home</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="/about">About</NavLinks>
+            </NavItem>
+          </NavMenu>
+          <Hamburger onClick={handleClick}>
+            {click ? <BiXCircle /> : <BiMenuAltRight />}
+          </Hamburger>
+        </NavbarContainer>
+      </Nav>
+    </>
   );
-}
+};
 
 export default Navbar;
