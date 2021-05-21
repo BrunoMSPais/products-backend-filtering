@@ -27,6 +27,7 @@ export const NavbarContainer = styled(Container)`
 `;
 
 export const NavLogo = styled(Link)`
+  color: var(--secondaryClr);
   justify-self: flex-start;
   cursor: pointer;
   text-decoration: none;
@@ -40,6 +41,7 @@ export const NavIcon = styled(HiShoppingBag)`
 `;
 
 export const Hamburger = styled.div`
+  color: var(--secondaryClr);
   display: block;
   position: absolute;
   top: 50%;
@@ -90,13 +92,13 @@ export const NavItem = styled.li`
     &:hover,
     &:focus,
     &:active {
-      border-bottom: 2px solid var(--primaryClr);
+      border-bottom: 2px solid var(--secondaryClr);
     }
   }
 `;
 
 export const NavLinks = styled(Link)`
-  color: var(--textClr);
+  color: #fff;
   display: table;
   text-align: center;
   text-decoration: none;
@@ -106,7 +108,7 @@ export const NavLinks = styled(Link)`
   &:hover,
   &:focus,
   &:active {
-    color: var(--primaryClr);
+    color: var(--secondaryClr);
     transition: all 0.3s ease;
   }
 

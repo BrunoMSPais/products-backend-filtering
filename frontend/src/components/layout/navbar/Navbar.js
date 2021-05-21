@@ -21,7 +21,7 @@ const Navbar = () => {
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">
-            <NavIcon />
+            <NavIcon alt="MarketJS" />
             MarketJS
           </NavLogo>
           <NavMenu onClick={handleClick} click={click}>
@@ -33,7 +33,11 @@ const Navbar = () => {
             </NavItem>
           </NavMenu>
           <Hamburger onClick={handleClick}>
-            {click ? <BiXCircle /> : <BiMenuAltRight />}
+            {click ? (
+              <BiXCircle alt="Close Menu" />
+            ) : (
+              <BiMenuAltRight alt="Open Menu" />
+            )}
           </Hamburger>
         </NavbarContainer>
       </Nav>

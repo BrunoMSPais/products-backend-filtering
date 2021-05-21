@@ -30,11 +30,11 @@ export const CardHeader = styled.header`
   font-size: 1.5em;
   background: var(--darkBg);
   padding: 1rem 0.5rem;
-  color: var(--primaryClr);
+  color: var(--secondaryClr);
 `;
 
 export const CardDescription = styled.p`
-  color: var(--secondaryClr);
+  color: var(--primaryClr);
   height: 100%;
   padding: 1em;
 `;
@@ -52,8 +52,7 @@ export const CardRating = styled.span`
   padding-left: 1em;
   display: grid;
   align-items: center;
-  /* background: green; */
-  color: #0e0e0e90;
+  color: var(--primaryClr);
 `;
 
 export const CardPrice = styled.span`
@@ -63,6 +62,5 @@ export const CardPrice = styled.span`
   display: grid;
   align-items: center;
   justify-content: flex-end;
-  /* background: blue; */
-  color: #0e0e0e90;
+  color: var(--primaryClr);
 `;

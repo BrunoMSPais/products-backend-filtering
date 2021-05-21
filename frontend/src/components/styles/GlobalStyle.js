@@ -2,10 +2,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --primaryClr: #4b59f7;
-    --secondaryClr: #7284A8;
-    --textClr: #fff;
-    --textAltClr: #eaeaea;
+    --primaryClr: #0d1e40;
+    --secondaryClr: #4b59f7;
 
     --darkBg: #101522;
   }
@@ -22,7 +20,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    color: var(--textClr);
     min-height: 100vh;
 
     @media screen and (max-width: 960px) {
