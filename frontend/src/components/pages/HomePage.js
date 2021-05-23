@@ -29,7 +29,7 @@ const HomePage = () => {
 
         setProducts(data.data);
         setLoading(false);
-        console.log(products);
+        // console.log(products);
       } catch (error) {
         console.log(error);
       }
@@ -43,7 +43,11 @@ const HomePage = () => {
       {/* Filtering and Sorting Section */}
       <QueryArea />
       {/* Products Listing */}
-      {loading ? <Loader /> : <Card products={products} />}
+      {loading ? (
+        <Loader />
+      ) : (
+        <Card products={products} iconAuth="User Interface" />
+      )}
     </>
   );
 };

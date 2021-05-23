@@ -42,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   z-index: 1;
   width: 100%;
+  height: 100%;
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 0.5em;
@@ -49,6 +50,17 @@ export const Container = styled.div`
   @media screen and (min-width: 991px) {
     padding: 0 3em;
   }
+`;
+
+export const Title = styled.h1`
+  font-size: 1.5rem;
+  text-align: center;
+`;
+
+export const Content = styled.p`
+  font-size: 1rem;
+  max-width: 100ex;
+  margin: 0 auto;
 `;
 
 export default GlobalStyle;

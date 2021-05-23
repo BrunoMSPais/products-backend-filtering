@@ -52,7 +52,7 @@ export const CardRating = styled.span`
   padding-left: 1em;
   display: grid;
   align-items: center;
-  color: var(--primaryClr);
+  /* color: var(--primaryClr); */
 `;
 
 export const CardPrice = styled.span`
