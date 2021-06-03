@@ -29,7 +29,6 @@ const HomePage = () => {
 
         setProducts(data.data);
         setLoading(false);
-        // console.log(products);
       } catch (error) {
         console.log(error);
       }
@@ -41,7 +40,7 @@ const HomePage = () => {
   return (
     <>
       {/* Filtering and Sorting Section */}
-      <QueryArea />
+      <QueryArea loading={loading} />
       {/* Products Listing */}
       {loading ? (
         <Loader />

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Container } from '../../styles/GlobalStyle';
 
 export const CardContainer = styled(Container)`
-  margin-top: 80px; /* discard after building queryArea component */
   padding: 1.5em 0.5em;
   display: grid;
   grid-gap: 1rem;
